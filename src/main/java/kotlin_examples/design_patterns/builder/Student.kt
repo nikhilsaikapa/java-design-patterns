@@ -2,8 +2,8 @@ package kotlin_examples.design_patterns.builder
 
 class Student private constructor(studentBuilder: StudentBuilder) {
 
-    private var name: String = ""
-    private var age: Int = 0
+    private var name: String?
+    private var age: Int?
 
     init {
         this.name = studentBuilder.name
@@ -22,9 +22,9 @@ class Student private constructor(studentBuilder: StudentBuilder) {
 
     class StudentBuilder {
 
-        var name: String = ""
+        var name: String? = null
             private set
-        var age: Int = 0
+        var age: Int? = null
             private set
 
         fun setName(name: String): StudentBuilder {
